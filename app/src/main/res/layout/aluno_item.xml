@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="4dp"
+    android:layout_margin="4dp"
+    android:background="@drawable/custom_border">
+
+    <TextView
+        android:id="@+id/nomeTxt"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Matheus"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginStart="8dp"/>
+
+    <TextView
+        android:id="@+id/ruaNumTxt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bairroTxt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Rua Senhora do Fogo, 120"
+        android:textSize="18sp"
+        android:layout_marginStart="8dp"/>
+
+    <TextView
+        android:id="@+id/bairroTxt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Bairro Vila da Folha"
+        android:textSize="18sp"
+        android:layout_marginStart="8dp"/>
+
+    <ImageButton
+        android:id="@+id/editBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/excluirBtn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/baseline_edit_24"/>
+
+    <ImageButton
+        android:id="@+id/excluirBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/baseline_restore_from_trash_24"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

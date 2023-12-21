@@ -132,6 +132,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:text="Cadastrar"
         android:textSize="24sp"/>
-    
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CadastrarAlunoActivity">
+
+    <TextView
+        android:id="@+id/tituloTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="App Rota Van"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textStyle="bold"
+        android:textSize="40sp"/>
+
+    <TextView
+        android:id="@+id/nomeLbl"
+        app:layout_constraintTop_toBottomOf="@id/tituloTxt"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="64dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nome"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_marginStart="4dp"/>
+
+    <EditText
+        android:id="@+id/nomeTxt"
+        app:layout_constraintTop_toBottomOf="@id/nomeLbl"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:hint="Informe o nome do aluno"
+        android:inputType="text"/>
+
+    <TextView
+        android:id="@+id/endercoLbl"
+        app:layout_constraintTop_toBottomOf="@id/nomeTxt"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="52dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enderço"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_marginStart="4dp"/>
+
+    <TextView
+        android:id="@+id/ruaLbl"
+        app:layout_constraintTop_toBottomOf="@id/endercoLbl"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="32dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rua"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_marginStart="4dp"/>
+
+    <EditText
+        android:id="@+id/ruaTxt"
+        app:layout_constraintTop_toBottomOf="@id/ruaLbl"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:hint="Informe a rua do endereço"
+        android:inputType="text"/>
+
+    <TextView
+        android:id="@+id/numLbl"
+        app:layout_constraintTop_toBottomOf="@id/ruaTxt"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Número"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_marginStart="4dp"/>
+
+    <EditText
+        android:id="@+id/numTxt"
+        app:layout_constraintTop_toBottomOf="@id/numLbl"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:hint="Informe o número do endereço"
+        android:inputType="number"/>
+
+    <TextView
+        android:id="@+id/bairroLbl"
+        app:layout_constraintTop_toBottomOf="@id/numTxt"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bairro"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_marginStart="4dp"/>
+
+    <EditText
+        android:id="@+id/bairroTxt"
+        app:layout_constraintTop_toBottomOf="@id/bairroLbl"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:hint="Informe o bairro do endereço"
+        android:inputType="text"/>
+
+    <Button
+        android:id="@+id/cadastrarBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/bairroTxt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Cadastrar"
+        android:textSize="24sp"/>
+    
+
+</androidx.constraintlayout.widget.ConstraintLayout>

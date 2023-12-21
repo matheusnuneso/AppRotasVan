@@ -7,12 +7,72 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/tituloTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="App Rota Van"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textStyle="bold"
+        android:textSize="40sp"/>
+
+    <TextView
+        android:id="@+id/userNameLbl"
+        app:layout_constraintTop_toBottomOf="@id/tituloTxt"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="136dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="usuario"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_marginStart="4dp"/>
+
+    <EditText
+        android:id="@+id/userNameTxt"
+        app:layout_constraintTop_toBottomOf="@id/userNameLbl"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:hint="Informe o seu usuário"
+        android:inputType="text"/>
+
+    <TextView
+        android:id="@+id/senhaLbl"
+        app:layout_constraintTop_toBottomOf="@id/userNameTxt"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="senha"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_marginStart="4dp"/>
+
+    <EditText
+        android:id="@+id/senhaTxt"
+        app:layout_constraintTop_toBottomOf="@id/senhaLbl"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:hint="Informe a sua senha"
+        android:inputType="textPassword"/>
+
+    <Button
+        android:id="@+id/loginBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/senhaTxt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="64dp"
+        android:text="LOGIN"
+        android:textSize="20sp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

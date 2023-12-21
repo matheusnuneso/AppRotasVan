@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeAdmActivity">
+
+    <TextView
+        android:id="@+id/tituloTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="App Rota Van"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textStyle="bold"
+        android:textSize="40sp"/>
+
+    <Button
+        android:id="@+id/rotaDiaBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tituloTxt"
+        app:layout_constraintBottom_toTopOf="@id/addAlunoBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Ver rota de hoje"
+        android:textSize="24sp"
+        app:cornerRadius="0dp"
+        android:layout_marginTop="100dp"/>
+
+    <Button
+        android:id="@+id/addAlunoBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/rotaDiaBtn"
+        app:layout_constraintBottom_toTopOf="@id/listarAlunosBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Cadastrar aluno"
+        android:textSize="24sp"
+        app:cornerRadius="0dp"/>
+
+    <Button
+        android:id="@+id/listarAlunosBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/addAlunoBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Ver rota de hoje"
+        android:textSize="24sp"
+        app:cornerRadius="0dp"
+        android:layout_marginBottom="128dp"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

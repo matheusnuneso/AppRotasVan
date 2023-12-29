@@ -5,7 +5,13 @@ import android.os.Bundle
 import android.view.View
 import android.view.View.OnClickListener
 import android.widget.Toast
+import com.nunes.approtasvan.api.ClienteAPI
 import com.nunes.approtasvan.databinding.ActivityMainBinding
+import com.nunes.approtasvan.model.AuthUser
+import com.nunes.approtasvan.model.User
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MainActivity : AppCompatActivity(), OnClickListener {
 
@@ -31,6 +37,31 @@ class MainActivity : AppCompatActivity(), OnClickListener {
     }
 
     private fun realizarLogin() {
-        Toast.makeText(baseContext, "deu certo", Toast.LENGTH_LONG).show()
+        val email:String = binding.userNameTxt.text.toString()
+        val senha:String = binding.senhaTxt.text.toString()
+
+        val authUser = AuthUser()
+        authUser.email = email
+        authUser.senha = senha
+
+        var api = ClienteAPI.createUsersEndPoint()
+        val requisicao: Call<User> = api.authUser(authUser)
+
+        requisicao.enqueue(object :Callback<User>{
+            override fun onResponse(call: Call<User>, response: Response<User>) {
+                if (response.isSuccessful){
+                    val nome = response.body().let { it!!.nome }
+                    Toast.makeText(baseContext, nome, Toast.LENGTH_LONG).show()
+                } else {
+                    Toast.makeText(baseContext, "Errado", Toast.LENGTH_LONG).show()
+                }
+            }
+
+            override fun onFailure(call: Call<User>, t: Throwable) {
+                Toast.makeText(baseContext, "t.message", Toast.LENGTH_LONG).show()
+            }
+
+        })
+
     }
 }

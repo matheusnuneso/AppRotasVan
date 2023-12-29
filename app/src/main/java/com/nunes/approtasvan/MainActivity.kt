@@ -10,7 +10,7 @@ import com.nunes.approtasvan.api.ClienteAPI
 import com.nunes.approtasvan.databinding.ActivityMainBinding
 import com.nunes.approtasvan.model.AuthUser
 import com.nunes.approtasvan.model.User
-import com.nunes.approtasvan.model.roleUser
+import com.nunes.approtasvan.model.roleUserENUM
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -72,9 +72,9 @@ class MainActivity : AppCompatActivity(), OnClickListener {
         if (body != null){
 
             when(body.role){
-                roleUser.ALUNO.toString() -> irParaHomeAluno(body.id)
-                roleUser.MOTORISTA.toString() -> irParaHomeAdm(body.id)
-                roleUser.ADM.toString() -> irParaHomeAdm(body.id)
+                roleUserENUM.ALUNO.toString() -> irParaHomeAluno(body.id)
+                roleUserENUM.MOTORISTA.toString() -> irParaHomeAdm(body.id)
+                roleUserENUM.ADM.toString() -> irParaHomeAdm(body.id)
             }
 
         }

@@ -29,6 +29,10 @@ class ClienteAPI {
         fun createUsersEndPoint():UserAPI{
             return getRetrofitINSTANCE().create(UserAPI::class.java)
         }
+
+        fun createGerenPresenEndPoint():GerenPresenAPI{
+            return getRetrofitINSTANCE().create(GerenPresenAPI::class.java)
+        }
     }
 
 }

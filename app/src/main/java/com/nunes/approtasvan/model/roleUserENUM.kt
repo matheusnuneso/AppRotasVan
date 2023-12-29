@@ -1,5 +1,5 @@
 package com.nunes.approtasvan.model
 
-enum class roleUser {
+enum class roleUserENUM {
     MOTORISTA, ADM, ALUNO
 }

@@ -1,5 +1,6 @@
 package com.nunes.approtasvan
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -9,6 +10,7 @@ import com.nunes.approtasvan.api.ClienteAPI
 import com.nunes.approtasvan.databinding.ActivityMainBinding
 import com.nunes.approtasvan.model.AuthUser
 import com.nunes.approtasvan.model.User
+import com.nunes.approtasvan.model.roleUser
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -48,12 +50,12 @@ class MainActivity : AppCompatActivity(), OnClickListener {
         val requisicao: Call<User> = api.authUser(authUser)
 
         requisicao.enqueue(object :Callback<User>{
+
             override fun onResponse(call: Call<User>, response: Response<User>) {
                 if (response.isSuccessful){
-                    val nome = response.body().let { it!!.nome }
-                    Toast.makeText(baseContext, nome, Toast.LENGTH_LONG).show()
+                    irParaHome(response.body())
                 } else {
-                    Toast.makeText(baseContext, "Errado", Toast.LENGTH_LONG).show()
+                    Toast.makeText(baseContext, "Usuário ou senha incorretos", Toast.LENGTH_LONG).show()
                 }
             }
 
@@ -63,5 +65,31 @@ class MainActivity : AppCompatActivity(), OnClickListener {
 
         })
 
+    }
+
+    private fun irParaHome(body: User?) {
+
+        if (body != null){
+
+            when(body.role){
+                roleUser.ALUNO.toString() -> irParaHomeAluno(body.id)
+                roleUser.MOTORISTA.toString() -> irParaHomeAdm(body.id)
+                roleUser.ADM.toString() -> irParaHomeAdm(body.id)
+            }
+
+        }
+
+    }
+
+    private fun irParaHomeAdm(id: Int) {
+        val trancisaoHomeAdm = Intent(baseContext, HomeAdmActivity::class.java)
+        trancisaoHomeAdm.putExtra("id", id)
+        startActivity(trancisaoHomeAdm)
+    }
+
+    private fun irParaHomeAluno(id: Int) {
+        val trancisaoHomeAluno = Intent(baseContext, HomeAlunoActivity::class.java)
+        trancisaoHomeAluno.putExtra("id", id)
+        startActivity(trancisaoHomeAluno)
     }
 }

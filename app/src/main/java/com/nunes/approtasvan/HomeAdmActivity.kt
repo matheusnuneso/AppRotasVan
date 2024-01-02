@@ -1,5 +1,6 @@
 package com.nunes.approtasvan
 
+import android.Manifest
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -16,6 +17,11 @@ class HomeAdmActivity : AppCompatActivity(), OnClickListener {
 
         binding = ActivityHomeAdmBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        requestPermissions(arrayOf(
+            Manifest.permission.ACCESS_COARSE_LOCATION,
+            Manifest.permission.ACCESS_FINE_LOCATION,
+            Manifest.permission.INTERNET), 0)
 
         registrarEventos()
     }

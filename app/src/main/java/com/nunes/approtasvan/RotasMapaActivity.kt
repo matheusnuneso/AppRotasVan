@@ -42,11 +42,6 @@ class RotasMapaActivity : AppCompatActivity(), OnClickListener {
         binding = ActivityRotasMapaBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        requestPermissions(arrayOf(
-            Manifest.permission.ACCESS_COARSE_LOCATION,
-            Manifest.permission.ACCESS_FINE_LOCATION,
-            Manifest.permission.INTERNET), 0)
-
         viewModel = ViewModelProvider(this)[RotasActivityViewModel::class.java]
         gpsService = GPSservice(baseContext, viewModel)
 

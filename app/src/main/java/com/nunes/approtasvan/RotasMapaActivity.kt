@@ -13,7 +13,7 @@ import com.nunes.approtasvan.databinding.ActivityRotasMapaBinding
 import com.nunes.approtasvan.model.Posicao
 import com.nunes.approtasvan.model.User
 import com.nunes.approtasvan.sensores.GPSservice
-import com.nunes.approtasvan.viewmodel.ViewModelRotasActivity
+import com.nunes.approtasvan.viewmodel.RotasActivityViewModel
 import org.osmdroid.api.IMapController
 import org.osmdroid.config.Configuration
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory
@@ -30,7 +30,7 @@ class RotasMapaActivity : AppCompatActivity(), OnClickListener {
 
     lateinit var binding: ActivityRotasMapaBinding
     lateinit var gpsService: GPSservice
-    lateinit var viewModel: ViewModelRotasActivity
+    lateinit var viewModel: RotasActivityViewModel
 
     lateinit var mapa: MapView
     lateinit var controleMapa: IMapController
@@ -47,7 +47,7 @@ class RotasMapaActivity : AppCompatActivity(), OnClickListener {
             Manifest.permission.ACCESS_FINE_LOCATION,
             Manifest.permission.INTERNET), 0)
 
-        viewModel = ViewModelProvider(this)[ViewModelRotasActivity::class.java]
+        viewModel = ViewModelProvider(this)[RotasActivityViewModel::class.java]
         gpsService = GPSservice(baseContext, viewModel)
 
         registrarObservers()

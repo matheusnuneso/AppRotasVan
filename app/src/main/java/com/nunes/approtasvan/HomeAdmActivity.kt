@@ -22,16 +22,23 @@ class HomeAdmActivity : AppCompatActivity(), OnClickListener {
 
     private fun registrarEventos() {
         binding.rotaDiaBtn.setOnClickListener(this)
+        binding.listarAlunosBtn.setOnClickListener(this)
     }
 
     override fun onClick(botao: View) {
         when(botao.id){
             binding.rotaDiaBtn.id -> irParaRotaDia()
+            binding.listarAlunosBtn.id -> irParaListaAlunos()
         }
     }
 
     private fun irParaRotaDia() {
         val trancisaoRotasmapa = Intent(baseContext, RotasMapaActivity::class.java)
         startActivity(trancisaoRotasmapa)
+    }
+
+    private fun irParaListaAlunos() {
+        val transicaoListaAlunos = Intent(baseContext, ListaAlunosActivity::class.java)
+        startActivity(transicaoListaAlunos)
     }
 }

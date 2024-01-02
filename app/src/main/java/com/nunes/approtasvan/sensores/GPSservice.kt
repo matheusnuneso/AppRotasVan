@@ -5,10 +5,10 @@ import android.content.Context
 import android.location.Location
 import android.location.LocationListener
 import android.location.LocationManager
-import com.nunes.approtasvan.viewmodel.ViewModelRotasActivity
+import com.nunes.approtasvan.viewmodel.RotasActivityViewModel
 
 @SuppressLint("MissingPermission")
-class GPSservice(var contexto:Context, var viewModel:ViewModelRotasActivity): LocationListener {
+class GPSservice(var contexto:Context, var viewModel:RotasActivityViewModel): LocationListener {
 
     private var locationManager: LocationManager
 

@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.nunes.approtasvan.model.Posicao
 
-class ViewModelRotasActivity:ViewModel() {
+class RotasActivityViewModel:ViewModel() {
 
     private val posicaoViewmMoel: MutableLiveData<Posicao> = MutableLiveData()
 

@@ -3,6 +3,8 @@ package com.nunes.approtasvan
 import android.Manifest
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.view.View.OnClickListener
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -24,7 +26,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class RotasMapaActivity : AppCompatActivity() {
+class RotasMapaActivity : AppCompatActivity(), OnClickListener {
 
     lateinit var binding: ActivityRotasMapaBinding
     lateinit var gpsService: GPSservice
@@ -51,6 +53,18 @@ class RotasMapaActivity : AppCompatActivity() {
         registrarObservers()
 
         configuraMapa()
+
+        registrarEventos()
+    }
+
+    private fun registrarEventos() {
+        binding.voltarBtn.setOnClickListener(this)
+    }
+
+    override fun onClick(botao: View) {
+        when(botao.id){
+            binding.voltarBtn.id -> {finish()}
+        }
     }
 
     private fun registrarObservers() {
@@ -77,7 +91,6 @@ class RotasMapaActivity : AppCompatActivity() {
         meuLayer.enableFollowLocation()
         meuLayer.enableMyLocation()
         meuLayer.setPersonAnchor(10f,10f)
-
         mapa.overlays.add(meuLayer)
 
         requisitarAlunosPresentes()
@@ -115,7 +128,5 @@ class RotasMapaActivity : AppCompatActivity() {
         m.position = GeoPoint(posicao.latitude, posicao.longitude)
         mapa.overlays.add(m)
     }
-
-
 
 }

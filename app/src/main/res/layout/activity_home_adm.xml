@@ -48,13 +48,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/addAlunoBtn"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/sairBtn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="Lista de Alunos"
         android:textSize="24sp"
+        app:cornerRadius="0dp"/>
+
+    <Button
+        android:id="@+id/sairBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/listarAlunosBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Sair"
+        android:textSize="24sp"
         app:cornerRadius="0dp"
-        android:layout_marginBottom="128dp"/>
+        android:layout_marginBottom="64dp"/>
 
 
 

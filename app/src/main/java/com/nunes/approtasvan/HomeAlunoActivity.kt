@@ -29,11 +29,13 @@ class HomeAlunoActivity : AppCompatActivity(), OnClickListener {
 
     private fun registrarEventos() {
         binding.naoVaiBtn.setOnClickListener(this)
+        binding.sairBtn.setOnClickListener(this)
     }
 
     override fun onClick(botao: View) {
         when(botao.id){
             binding.naoVaiBtn.id -> salvarPresencaAluno()
+            binding.sairBtn.id -> {finish()}
         }
     }
 
@@ -54,7 +56,7 @@ class HomeAlunoActivity : AppCompatActivity(), OnClickListener {
         requisicao.enqueue(object :Callback<GerenPresen>{
             override fun onResponse(call: Call<GerenPresen>, response: Response<GerenPresen>) {
                 if (response.isSuccessful){
-                    Toast.makeText(baseContext, data, Toast.LENGTH_LONG).show()
+                    Toast.makeText(baseContext, "Salvo com sucesso!", Toast.LENGTH_LONG).show()
                 } else {
                     Toast.makeText(baseContext, "algo deu errado", Toast.LENGTH_LONG).show()
                 }

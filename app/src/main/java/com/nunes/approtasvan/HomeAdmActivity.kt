@@ -29,12 +29,14 @@ class HomeAdmActivity : AppCompatActivity(), OnClickListener {
     private fun registrarEventos() {
         binding.rotaDiaBtn.setOnClickListener(this)
         binding.listarAlunosBtn.setOnClickListener(this)
+        binding.sairBtn.setOnClickListener(this)
     }
 
     override fun onClick(botao: View) {
         when(botao.id){
             binding.rotaDiaBtn.id -> irParaRotaDia()
             binding.listarAlunosBtn.id -> irParaListaAlunos()
+            binding.sairBtn.id -> {finish()}
         }
     }
 

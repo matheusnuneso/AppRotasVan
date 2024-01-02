@@ -38,8 +38,8 @@ class HomeAlunoActivity : AppCompatActivity(), OnClickListener {
     }
 
     private fun salvarPresencaAluno(){
-        val dia = binding.dataTxt.dayOfMonth
-        val mes = binding.dataTxt.month + 1
+        val dia = getDia()
+        val mes = getMes()
         val ano = binding.dataTxt.year
         val data = "${dia}/${mes}/${ano}"
         this.idAluno = intent.getIntExtra("id", 0)
@@ -54,7 +54,7 @@ class HomeAlunoActivity : AppCompatActivity(), OnClickListener {
         requisicao.enqueue(object :Callback<GerenPresen>{
             override fun onResponse(call: Call<GerenPresen>, response: Response<GerenPresen>) {
                 if (response.isSuccessful){
-                    Toast.makeText(baseContext, "Salvo com sucesso!", Toast.LENGTH_LONG).show()
+                    Toast.makeText(baseContext, data, Toast.LENGTH_LONG).show()
                 } else {
                     Toast.makeText(baseContext, "algo deu errado", Toast.LENGTH_LONG).show()
                 }
@@ -65,5 +65,23 @@ class HomeAlunoActivity : AppCompatActivity(), OnClickListener {
             }
 
         })
+    }
+
+    private fun getDia():String{
+        val dia:Int = binding.dataTxt.dayOfMonth
+
+        if (dia < 10){
+            return "0${dia}"
+        }
+        return dia.toString()
+    }
+
+    private fun getMes():String{
+        val mes:Int = binding.dataTxt.month + 1
+
+        if (mes < 10){
+            return "0${mes}"
+        }
+        return mes.toString()
     }
 }

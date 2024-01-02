@@ -1,5 +1,6 @@
 package com.nunes.approtasvan
 
+import android.Manifest
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -64,6 +65,8 @@ class MainActivity : AppCompatActivity(), OnClickListener {
             }
 
         })
+
+        //irParaHome(User(5, "Samuel", "José", 12, "rochedo", "ADM", "samuel@gmail.com", -20.654956, -43.781323))
 
     }
 

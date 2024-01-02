@@ -1,5 +1,6 @@
 package com.nunes.approtasvan
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -25,7 +26,12 @@ class HomeAdmActivity : AppCompatActivity(), OnClickListener {
 
     override fun onClick(botao: View) {
         when(botao.id){
-
+            binding.rotaDiaBtn.id -> irParaRotaDia()
         }
+    }
+
+    private fun irParaRotaDia() {
+        val trancisaoRotasmapa = Intent(baseContext, RotasMapaActivity::class.java)
+        startActivity(trancisaoRotasmapa)
     }
 }

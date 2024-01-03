@@ -4,6 +4,7 @@ import android.Manifest
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
 import android.view.View
 import android.view.View.OnClickListener
 import android.widget.Toast
@@ -27,6 +28,13 @@ class MainActivity : AppCompatActivity(), OnClickListener {
         setContentView(binding.root)
 
         registrarEventos()
+    }
+
+    override fun onStart() {
+        super.onStart()
+
+        binding.userNameTxt.text = Editable.Factory.getInstance().newEditable("")
+        binding.senhaTxt.text = Editable.Factory.getInstance().newEditable("")
     }
 
     private fun registrarEventos() {

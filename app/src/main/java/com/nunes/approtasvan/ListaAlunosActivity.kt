@@ -2,6 +2,8 @@ package com.nunes.approtasvan
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.view.View.OnClickListener
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nunes.approtasvan.api.ClienteAPI
@@ -29,6 +31,11 @@ class ListaAlunosActivity : AppCompatActivity() {
 
         configuraRecycleView()
         registrarObserver()
+        registrarEventos()
+    }
+
+    private fun registrarEventos() {
+        binding.voltarBtn.setOnClickListener { finish() }
     }
 
     private fun configuraRecycleView() {

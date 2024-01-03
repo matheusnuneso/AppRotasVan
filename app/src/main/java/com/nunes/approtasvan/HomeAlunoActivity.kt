@@ -46,9 +46,7 @@ class HomeAlunoActivity : AppCompatActivity(), OnClickListener {
         val data = "${dia}/${mes}/${ano}"
         this.idAluno = intent.getIntExtra("id", 0)
 
-        var gerenPresen = GerenPresen()
-        gerenPresen.idAluno = idAluno as Int
-        gerenPresen.dataNPresenca = data
+        var gerenPresen = GerenPresen(idAluno as Int, data)
 
         var api = ClienteAPI.createGerenPresenEndPoint()
         val requisicao: Call<GerenPresen> = api.saveGerenPresen(gerenPresen)

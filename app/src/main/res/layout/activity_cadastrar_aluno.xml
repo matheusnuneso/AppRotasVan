@@ -22,7 +22,7 @@
         android:id="@+id/nomeLbl"
         app:layout_constraintTop_toBottomOf="@id/tituloTxt"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nome"
@@ -68,7 +68,7 @@
         android:id="@+id/endercoLbl"
         app:layout_constraintTop_toBottomOf="@id/emailTxt"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="22dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Enderço"
@@ -80,7 +80,7 @@
         android:id="@+id/ruaLbl"
         app:layout_constraintTop_toBottomOf="@id/endercoLbl"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="14dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Rua"
@@ -139,22 +139,70 @@
         app:layout_constraintTop_toBottomOf="@id/bairroLbl"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textSize="18sp"
         android:hint="Informe o bairro do endereço"
         android:inputType="text"/>
 
+    <TextView
+        android:id="@+id/latitudeLbl"
+        app:layout_constraintTop_toBottomOf="@id/bairroTxt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/longitudeLbl"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Latitude"
+        android:textStyle="bold"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/longitudeLbl"
+        app:layout_constraintTop_toBottomOf="@id/bairroTxt"
+        app:layout_constraintStart_toEndOf="@id/latitudeLbl"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Longitude"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_marginStart="4dp"/>
+
+    <EditText
+        android:id="@+id/latitudeTxt"
+        app:layout_constraintTop_toBottomOf="@id/latitudeLbl"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/longitudeTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:hint="Informe a latitude"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/longitudeTxt"
+        app:layout_constraintTop_toBottomOf="@id/longitudeLbl"
+        app:layout_constraintStart_toEndOf="@id/latitudeTxt"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:hint="Informe a longitude"
+        android:inputType="text"/>
+
     <Button
         android:id="@+id/cadastrarBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/bairroTxt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="Cadastrar"
-        android:textSize="24sp"/>
+        android:textSize="24sp"
+        android:layout_marginBottom="18dp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

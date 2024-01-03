@@ -43,9 +43,7 @@ class MainActivity : AppCompatActivity(), OnClickListener {
         val email:String = binding.userNameTxt.text.toString()
         val senha:String = binding.senhaTxt.text.toString()
 
-        val authUser = AuthUser()
-        authUser.email = email
-        authUser.senha = senha
+        val authUser = AuthUser(email, senha)
 
         var api = ClienteAPI.createUsersEndPoint()
         val requisicao: Call<User> = api.authUser(authUser)

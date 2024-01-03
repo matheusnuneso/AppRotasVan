@@ -14,4 +14,7 @@ interface UserAPI {
 
     @GET("users/alunos")
     fun getAlunos():Call<List<User>>
+
+    @POST("users")
+    fun saveUser(@Body user: User):Call<User>
 }

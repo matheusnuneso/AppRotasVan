@@ -28,6 +28,7 @@ class HomeAdmActivity : AppCompatActivity(), OnClickListener {
 
     private fun registrarEventos() {
         binding.rotaDiaBtn.setOnClickListener(this)
+        binding.addAlunoBtn.setOnClickListener(this)
         binding.listarAlunosBtn.setOnClickListener(this)
         binding.sairBtn.setOnClickListener(this)
     }
@@ -35,6 +36,7 @@ class HomeAdmActivity : AppCompatActivity(), OnClickListener {
     override fun onClick(botao: View) {
         when(botao.id){
             binding.rotaDiaBtn.id -> irParaRotaDia()
+            binding.addAlunoBtn.id -> irParaCadastrarAluno()
             binding.listarAlunosBtn.id -> irParaListaAlunos()
             binding.sairBtn.id -> {finish()}
         }
@@ -43,6 +45,11 @@ class HomeAdmActivity : AppCompatActivity(), OnClickListener {
     private fun irParaRotaDia() {
         val trancisaoRotasmapa = Intent(baseContext, RotasMapaActivity::class.java)
         startActivity(trancisaoRotasmapa)
+    }
+
+    private fun irParaCadastrarAluno() {
+        val trancisaoAddAluno = Intent(baseContext, CadastrarAlunoActivity::class.java)
+        startActivity(trancisaoAddAluno)
     }
 
     private fun irParaListaAlunos() {

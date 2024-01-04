@@ -25,6 +25,9 @@ import org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.text.SimpleDateFormat
+import java.util.Calendar
+import java.util.Locale
 
 class RotasMapaActivity : AppCompatActivity(), OnClickListener {
 
@@ -93,8 +96,10 @@ class RotasMapaActivity : AppCompatActivity(), OnClickListener {
 
     private fun requisitarAlunosPresentes() {
 
+        val data = getDataHJ()
+
         var api = ClienteAPI.createGerenPresenEndPoint()
-        val requisicao: Call<List<User>> = api.getAlunosPresnetes("02-01-2024")
+        val requisicao: Call<List<User>> = api.getAlunosPresnetes(data)
 
         requisicao.enqueue(object: Callback<List<User>>{
 
@@ -110,6 +115,12 @@ class RotasMapaActivity : AppCompatActivity(), OnClickListener {
 
         })
 
+    }
+
+    private fun getDataHJ(): String {
+        val dateFormat = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault())
+        val dataAtual = Calendar.getInstance().time
+        return dateFormat.format(dataAtual)
     }
 
     private fun addMarcadoresAlunos(listaUser: List<User>){

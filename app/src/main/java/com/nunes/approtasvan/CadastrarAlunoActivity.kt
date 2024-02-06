@@ -46,6 +46,7 @@ class CadastrarAlunoActivity : AppCompatActivity(), OnClickListener {
         user.email = binding.emailTxt.text.toString()
         user.latitude = binding.latitudeTxt.text.toString().toDouble()
         user.longitude = binding.longitudeTxt.text.toString().toDouble()
+        user.idVan = intent.getIntExtra("idVan", 0)
 
         var api = ClienteAPI.createUsersEndPoint()
         val requisicao: Call<User> = api.saveUser(user)

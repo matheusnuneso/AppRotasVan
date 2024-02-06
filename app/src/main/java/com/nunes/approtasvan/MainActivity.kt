@@ -82,17 +82,18 @@ class MainActivity : AppCompatActivity(), OnClickListener {
 
             when(body.role){
                 roleUserENUM.ALUNO.toString() -> irParaHomeAluno(body.id)
-                roleUserENUM.MOTORISTA.toString() -> irParaHomeAdm(body.id)
-                roleUserENUM.ADM.toString() -> irParaHomeAdm(body.id)
+                roleUserENUM.MOTORISTA.toString() -> irParaHomeAdm(body)
+                roleUserENUM.ADM.toString() -> irParaHomeAdm(body)
             }
 
         }
 
     }
 
-    private fun irParaHomeAdm(id: Int) {
+    private fun irParaHomeAdm(user: User) {
         val trancisaoHomeAdm = Intent(baseContext, HomeAdmActivity::class.java)
-        trancisaoHomeAdm.putExtra("id", id)
+        trancisaoHomeAdm.putExtra("id", user.id)
+        trancisaoHomeAdm.putExtra("idVan", user.idVan)
         startActivity(trancisaoHomeAdm)
     }
 

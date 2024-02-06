@@ -13,7 +13,7 @@ interface GerenPresenAPI {
     @POST("gerencia-presenca")
     fun saveGerenPresen(@Body gerenPresen: GerenPresen):Call<GerenPresen>
 
-    @GET("gerencia-presenca/{data}")
-    fun getAlunosPresnetes(@Path("data") data:String):Call<List<User>>
+    @GET("gerencia-presenca/van/{idVan}/{data}")
+    fun getAlunosPresnetes(@Path("idVan") idVan:Int, @Path("data") data:String):Call<List<User>>
 
 }

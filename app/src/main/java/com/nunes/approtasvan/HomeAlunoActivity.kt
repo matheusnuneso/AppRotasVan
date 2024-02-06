@@ -43,7 +43,7 @@ class HomeAlunoActivity : AppCompatActivity(), OnClickListener {
         val dia = getDia()
         val mes = getMes()
         val ano = binding.dataTxt.year
-        val data = "${dia}/${mes}/${ano}"
+        val data = "${dia}-${mes}-${ano}"
         this.idAluno = intent.getIntExtra("id", 0)
 
         var gerenPresen = GerenPresen(idAluno as Int, data)

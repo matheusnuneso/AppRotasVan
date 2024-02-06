@@ -96,10 +96,11 @@ class RotasMapaActivity : AppCompatActivity(), OnClickListener {
 
     private fun requisitarAlunosPresentes() {
 
+        val idVan = intent.getIntExtra("idVan", 0)
         val data = getDataHJ()
 
         var api = ClienteAPI.createGerenPresenEndPoint()
-        val requisicao: Call<List<User>> = api.getAlunosPresnetes(data)
+        val requisicao: Call<List<User>> = api.getAlunosPresnetes(idVan, data)
 
         requisicao.enqueue(object: Callback<List<User>>{
 

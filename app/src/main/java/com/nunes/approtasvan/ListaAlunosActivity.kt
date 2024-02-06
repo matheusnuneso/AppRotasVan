@@ -41,7 +41,7 @@ class ListaAlunosActivity : AppCompatActivity() {
     private fun configuraRecycleView() {
 
         var api = ClienteAPI.createUsersEndPoint()
-        val requisicao: Call<List<User>> = api.getAlunos()
+        val requisicao: Call<List<User>> = api.getAlunos(intent.getIntExtra("idVan", 0))
 
         requisicao.enqueue(object: Callback<List<User>> {
             override fun onResponse(call: Call<List<User>>, response: Response<List<User>>) {

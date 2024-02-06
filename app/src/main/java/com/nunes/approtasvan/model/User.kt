@@ -11,5 +11,6 @@ class User(
     @SerializedName("role") var role: String = "",
     @SerializedName("email") var email: String = "",
     @SerializedName("latitude") var latitude: Double = 0.0,
-    @SerializedName("longitude") var longitude: Double = 0.0
+    @SerializedName("longitude") var longitude: Double = 0.0,
+    @SerializedName("idVan") var idVan: Int = 0
 )

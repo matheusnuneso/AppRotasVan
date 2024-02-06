@@ -44,16 +44,19 @@ class HomeAdmActivity : AppCompatActivity(), OnClickListener {
 
     private fun irParaRotaDia() {
         val trancisaoRotasmapa = Intent(baseContext, RotasMapaActivity::class.java)
+        trancisaoRotasmapa.putExtra("idVan", intent.getIntExtra("idVan", 0))
         startActivity(trancisaoRotasmapa)
     }
 
     private fun irParaCadastrarAluno() {
         val trancisaoAddAluno = Intent(baseContext, CadastrarAlunoActivity::class.java)
+        trancisaoAddAluno.putExtra("idVan", intent.getIntExtra("idVan", 0))
         startActivity(trancisaoAddAluno)
     }
 
     private fun irParaListaAlunos() {
         val transicaoListaAlunos = Intent(baseContext, ListaAlunosActivity::class.java)
+        transicaoListaAlunos.putExtra("idVan", intent.getIntExtra("idVan", 0))
         startActivity(transicaoListaAlunos)
     }
 }
